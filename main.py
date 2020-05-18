@@ -36,14 +36,13 @@ logging.config.dictConfig({
     }
 })
 
-NIKE_HOME_URL = "https://www.nike.com/us/en_us/"
+NIKE_HOME_URL = "https://www.nike.com/login/"
 LOGGER = logging.getLogger()
 
 
 def run(driver, username, password, url, shoe_size, login_time=None, release_time=None,
         page_load_timeout=None, screenshot_path=None, html_path=None, select_payment=False, purchase=False,
         num_retries=None):
-    driver.maximize_window()
     driver.set_page_load_timeout(page_load_timeout)
 
     if login_time:
@@ -128,13 +127,13 @@ def login(driver, username, password):
         driver.get(NIKE_HOME_URL)
     except TimeoutException:
         LOGGER.info("Page load timed out but continuing anyway")
-
-    LOGGER.info("Waiting for login button to become clickable")
-    wait_until_clickable(driver=driver, xpath="//li[@js-hook='exp-join-login']/button")
+    
+    '''LOGGER.info("Waiting for login button to become clickable")
+    wait_until_clickable(driver=driver, xpath="//a[@aria-label='Sign In']/button")
 
     LOGGER.info("Clicking login button")
-    driver.find_element_by_xpath("//li[@js-hook='exp-join-login']/button").click()
-
+    driver.find_element_by_xpath("//a[@aria-label='Sign In']/button").click()'''
+    
     LOGGER.info("Waiting for login fields to become visible")
     wait_until_visible(driver=driver, xpath="//input[@name='emailAddress']")
 
