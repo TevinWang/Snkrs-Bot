@@ -6,6 +6,8 @@ This is a Selenium bot for buying a given sneaker from the Nike Snkrs website ON
    This is because the purchase page changes to where the buy button redirects to a seperate checkout page (as opposed to a direct buy popup during release).
 It is a commandline script written solely in python. `Please run with python 3.7.`
 There are 4 selenium drivers in the bin directory for both Chrome and Firefox on both Linux and MacOS. `I have not added the drivers for Windows.`
+
+Tevin's edit: `It hasn't worked for me for other browsers except firefox.`
 I have found the Firefox driver for MacOS works best.
 
 Ideally, some pieces (or all?) of this could be replaced with direct Nike API requests instead of Selenium. However, I've found that Nike APIs are not very straightforward. 
